@@ -2,15 +2,21 @@ import pytest
 from fizzbuzz import FizzBuzz
 
 class TestFizzBuzz:
-    def test_1_converted_to_string1(self):
-        actual = FizzBuzz.convert(1)
-        assert actual == '1'
+    class TestMultipleOf3IsConvertedToFizz:
+        def test_3_converted_to_Fizz(self):
+            assert FizzBuzz.convert(3) == 'Fizz'
 
-    def test_2_converted_to_string2(self):
-        actual = FizzBuzz.convert(2)
-        assert actual == '2'
+    class TestMultipleOf5IsConvertedToBuzz:
+        def test_5_converted_to_Fizz(self):
+            assert FizzBuzz.convert(5) == 'Buzz'
 
-# 3の倍数では'Fizz'という文字列に変換する
-# 5の倍数では'Buzz'という文字列に変換する
-# 3の倍数かつ5の倍数のときは'FizzBuzz'という文字列に変換する
-# それ以外のときは数字を文字列に変換する
+    class TestMultipleOf3And5IsConvertedToFizzBuzz:
+        def test_15_converted_to_FizzBuzz(self):
+            assert FizzBuzz.convert(15) == 'FizzBuzz'
+
+    class TestOtherNumber:
+        def test_1_converted_to_string1(self):
+            for i in range(1, 100):
+                print('%s: FizzBuzz.convert(%s)', i, FizzBuzz.convert(i))
+
+            assert FizzBuzz.convert(1) == '1'
