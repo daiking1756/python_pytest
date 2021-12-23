@@ -5,6 +5,9 @@ class TestIntegerClosedInterval():
     def test_has_lower_endpoint_3(self):
             assert IntegerClosedInterval().lower_endpoint == 3
 
+    def test_has_lower_endpoint_7(self):
+            assert IntegerClosedInterval().lower_endpoint == 7
+
 # 整数閉区間クラスの仕様(`IntegerClosedInterval``)
     # メンバ変数
         # - [] 整数閉区間クラスは下端点(`lower endpoint`)をメンバ変数に持つ
